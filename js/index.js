@@ -48,27 +48,27 @@ function preguntas() {
   if (eleccion === true) {
     for (let i = 0; i < 5; i++) {
       let edad = confirm(normalizar(nombre) + " ¿Tenés " + EDAD[i] + "?");
-      if (edad === true && EDAD[i] === "menos de 18 años") {
+      if (edad === true) {
         alert(
           normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
-      } else if (edad === true && EDAD[i] === "entre 18 y 25 años") {
+      } else if (edad === true) {
         alert(
           normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
-      } else if (edad === true && EDAD[i] === "entre 25 y 35 años") {
+      } else if (edad === true) {
         alert(
           normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
-      } else if (edad === true && EDAD[i] === "entre 35 y 45 años") {
+      } else if (edad === true) {
         alert(
           normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
-      } else if (edad === true && EDAD[i] === "más de 45 años") {
+      } else if (edad === true) {
         alert(
           normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
