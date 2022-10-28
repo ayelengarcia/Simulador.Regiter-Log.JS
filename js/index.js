@@ -1,8 +1,19 @@
-// Registro automático
+// variables globales
+let nombre;
 let userNew;
 let passNew;
 
+// FUNCIONES
+// con parámetro
+function normalizar(username) {
+  let letraInicial = username.substring(0, 1);
+  let resto = username.substring(1, username.length);
+  return letraInicial.toUpperCase() + resto.toLowerCase();
+}
+
+//Normal
 function register() {
+  nombre = prompt("¿Como te llamas?");
   userNew = prompt("Ingresá un nombre de usuario");
   passNew = prompt("Ingresá una contraseña");
   if (
@@ -12,9 +23,9 @@ function register() {
     passNew.trim().length > 4
   ) {
     alert(
-      "El usuario " + capitalize(userNew) + " se ha registrado correctamente."
+      "El usuario " + normalizar(userNew) + " se ha registrado correctamente."
     );
-    return userNew, passNew;
+    return nombre, userNew, passNew;
   } else {
     alert(
       "Ha ocurrido un error, el usuario y la contraseña deben tener al menos 4 dígitos."
@@ -22,17 +33,9 @@ function register() {
   }
 }
 
-// FUNCIONES
-// parámetro
-function capitalize(username) {
-  let letraInicial = username.substring(0, 1);
-  let resto = username.substring(1, username.length);
-  return letraInicial.toUpperCase() + resto.toLowerCase();
-}
-
 //Ciclo FOR
 function preguntas() {
-  alert(capitalize(userNew) + " ahora necesitamos que ingreses algunos datos!");
+  alert(normalizar(nombre) + " ahora necesitamos que ingreses algunos datos!");
   let eleccion = confirm("¿Deseas continuar?");
   const EDAD = [
     "menos de 18 años",
@@ -44,30 +47,30 @@ function preguntas() {
 
   if (eleccion === true) {
     for (let i = 0; i < 5; i++) {
-      let edad = confirm(capitalize(userNew) + " ¿Tenés " + EDAD[i] + "?");
+      let edad = confirm(normalizar(nombre) + " ¿Tenés " + EDAD[i] + "?");
       if (edad === true && EDAD[i] === "menos de 18 años") {
         alert(
-          capitalize(userNew) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
+          normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
       } else if (edad === true && EDAD[i] === "entre 18 y 25 años") {
         alert(
-          capitalize(userNew) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
+          normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
       } else if (edad === true && EDAD[i] === "entre 25 y 35 años") {
         alert(
-          capitalize(userNew) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
+          normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
       } else if (edad === true && EDAD[i] === "entre 35 y 45 años") {
         alert(
-          capitalize(userNew) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
+          normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
       } else if (edad === true && EDAD[i] === "más de 45 años") {
         alert(
-          capitalize(userNew) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
+          normalizar(nombre) + ", tenés " + EDAD[i] + ". Ya lo registramos!"
         );
         break;
       }
@@ -78,13 +81,12 @@ function preguntas() {
 }
 
 //Normal
-
 function login() {
   let userLog = prompt("Ingresá tu usuario");
   let passLog = prompt("Ingresá tu contraseña");
   if (userLog === userNew && passLog === passNew) {
-    alert("Bienvenid@ " + capitalize(userNew) + "!");
+    alert("Bienvenid@ " + normalizar(nombre) + "!");
   } else {
-    alert("El usuario no está registrado.");
+    alert("El usuario " + userLog + " no está registrado.");
   }
 }
