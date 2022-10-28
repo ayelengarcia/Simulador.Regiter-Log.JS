@@ -1,23 +1,28 @@
 // Registro automático
+let userNew;
+let passNew;
 
-let userNew = prompt("Ingresá un nombre de usuario");
-let passNew = prompt("Ingresá una contraseña");
-
-if (
-  userNew.trim() !== "" &&
-  userNew.trim().length > 4 &&
-  passNew.trim() !== "" &&
-  passNew.trim().length > 4
-) {
-  alert(
-    "El usuario " + capitalize(userNew) + " se ha registrado correctamente."
-  );
-} else {
-  alert("Cuenta incorrecta, actualiza y registrate nuevamente.");
+function register() {
+  userNew = prompt("Ingresá un nombre de usuario");
+  passNew = prompt("Ingresá una contraseña");
+  if (
+    userNew.trim() !== "" &&
+    userNew.trim().length > 4 &&
+    passNew.trim() !== "" &&
+    passNew.trim().length > 4
+  ) {
+    alert(
+      "El usuario " + capitalize(userNew) + " se ha registrado correctamente."
+    );
+    return userNew, passNew;
+  } else {
+    alert(
+      "Ha ocurrido un error, el usuario y la contraseña deben tener al menos 4 dígitos."
+    );
+  }
 }
 
 // FUNCIONES
-
 // parámetro
 function capitalize(username) {
   let letraInicial = username.substring(0, 1);
