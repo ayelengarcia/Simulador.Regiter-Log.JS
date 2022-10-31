@@ -14,13 +14,13 @@ function normalizar(username) {
 //Normal
 function register() {
   nombre = prompt("¿Como te llamas?");
-  userNew = prompt("Ingresá un nombre de usuario");
+  userNew = prompt("Ingresá un nombre de usuario.");
   passNew = prompt("Ingresá una contraseña");
   if (
     userNew.trim() !== "" &&
-    userNew.trim().length > 4 &&
+    userNew.trim().length >= 4 &&
     passNew.trim() !== "" &&
-    passNew.trim().length > 4
+    passNew.trim().length >= 4
   ) {
     alert(
       "El usuario " + normalizar(userNew) + " se ha registrado correctamente."
